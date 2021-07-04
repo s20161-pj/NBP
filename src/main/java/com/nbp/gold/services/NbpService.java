@@ -32,7 +32,7 @@ public class NbpService{
         GoldRateNbpModel[] goldRates = restTemplate.getForObject(apiUrl, GoldRateNbpModel[].class);
         double average = calculate(goldRates);
 
-        GoldRate goldRate = new GoldRate(MetalType.Gold, from, to, LocalDateTime.now(), average);
+        GoldRate goldRate = new GoldRate(null, MetalType.Gold, from, to, LocalDateTime.now(), average);
         this.nbpRepository.save(goldRate);
 
         return average;

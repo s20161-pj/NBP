@@ -12,8 +12,8 @@ public class GoldRate {
     private Long id;
     @Enumerated(EnumType.STRING)
     private MetalType metalType;
-    private LocalDate from;
-    private LocalDate to;
+    private LocalDate fromDate;
+    private LocalDate toDate;
     private LocalDateTime createdAt;
     private double average;
 
@@ -21,10 +21,11 @@ public class GoldRate {
 
     }
 
-    public GoldRate(MetalType metalType, LocalDate from, LocalDate to, LocalDateTime createdAt, double average) {
+    public GoldRate(Long id, MetalType metalType, LocalDate fromDate, LocalDate toDate, LocalDateTime createdAt, double average) {
+        this.id = id;
         this.metalType = metalType;
-        this.from = from;
-        this.to = to;
+        this.fromDate = fromDate;
+        this.toDate = toDate;
         this.createdAt = createdAt;
         this.average = average;
     }
@@ -53,27 +54,27 @@ public class GoldRate {
         this.metalType = metalType;
     }
 
-    public LocalDate getFrom() {
-        return from;
-    }
-
-    public void setFrom(LocalDate from) {
-        this.from = from;
-    }
-
-    public LocalDate getTo() {
-        return to;
-    }
-
-    public void setTo(LocalDate to) {
-        this.to = to;
-    }
-
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
 
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public LocalDate getFromDate() {
+        return fromDate;
+    }
+
+    public void setFromDate(LocalDate fromDate) {
+        this.fromDate = fromDate;
+    }
+
+    public LocalDate getToDate() {
+        return toDate;
+    }
+
+    public void setToDate(LocalDate toDate) {
+        this.toDate = toDate;
     }
 }
